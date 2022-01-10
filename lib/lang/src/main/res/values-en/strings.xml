@@ -1,0 +1,7 @@
+<resources>
+    <string name="search">Search</string>
+    <string name="retry">Retry</string>
+    <string name="search_hint">Support multi keywords separated by Spaces</string>
+    <string name="pin">Pin</string>
+    <string name="hot_search">Hot search</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.CommonBtn" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/dp_52</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:background">@drawable/widget_common_save_bg</item>
+    </style>
+
+    <style name="Widget.CommonBtn.Warn">
+        <item name="android:background">@drawable/widget_common_delete_bg</item>
+    </style>
+
+    <style name="Widget.CommonRowInfo" parent="">
+        <item name="android:background">@drawable/widget_common_row_info_bg</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_marginStart">@dimen/dp_16</item>
+        <item name="android:layout_marginEnd">@dimen/dp_16</item>
+        <item name="android:layout_marginTop">@dimen/dp_16</item>
+    </style>
+</resources>

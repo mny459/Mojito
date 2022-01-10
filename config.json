@@ -1,0 +1,137 @@
+{
+  "appConfigDesc": "appConfig 配置的是可以跑 app 的模块，git 提交务必只包含 launcher",
+  "appConfig": [
+    "launcher",
+    "widget"
+  ],
+  "pkgConfigDesc": "pkgConfig 配置的是要依赖的功能包，为空则依赖全部，git 提交务必为空",
+  "pkgConfig": [],
+  "proConfigDesc": "proConfig 配置的是使用本地还是仓库，优先级低于 appConfig 和 pkgConfig",
+  "proConfig": [
+    {
+      "isApply": true,
+      "useLocal": true,
+      "localPath": ":feature:mock"
+    },
+    {
+      "isApply": true,
+      "useLocal": true,
+      "localPath": ":feature:launcher:app"
+    },
+    {
+      "isApply": false,
+      "useLocal": true,
+      "localPath": ":feature:eyepetizer:app"
+    },
+    {
+      "isApply": true,
+      "useLocal": true,
+      "localPath": ":feature:eyepetizer:pkg",
+      "remotePath": "com.mny.mojito:feature_eyepetizer_pkg:latest.integration"
+    },
+    {
+      "isApply": true,
+      "useLocal": true,
+      "localPath": ":feature:eyepetizer:export",
+      "remotePath": "com.mny.mojito:feature_eyepetizer_export:latest.integration"
+    },
+    {
+      "isApply": false,
+      "useLocal": true,
+      "localPath": ":feature:flow:app"
+    },
+    {
+      "isApply": false,
+      "useLocal": true,
+      "localPath": ":feature:flow:pkg",
+      "remotePath": "com.mny.mojito:feature_flow_pkg:latest.integration"
+    },
+    {
+      "isApply": false,
+      "useLocal": true,
+      "localPath": ":feature:flow:export",
+      "remotePath": "com.mny.mojito:feature_flow_export:latest.integration"
+    },
+    {
+      "isApply": true,
+      "useLocal": true,
+      "localPath": ":feature:widget:app"
+    },
+    {
+      "isApply": true,
+      "useLocal": true,
+      "localPath": ":feature:widget:pkg",
+      "remotePath": "com.mny.mojito:feature_widget_pkg:latest.integration"
+    },
+    {
+      "isApply": true,
+      "useLocal": true,
+      "localPath": ":feature:widget:export",
+      "remotePath": "com.mny.mojito:feature_widget_export:latest.integration"
+    },
+    {
+      "isApply": true,
+      "useLocal": true,
+      "localPath": ":feature:user:app"
+    },
+    {
+      "isApply": true,
+      "useLocal": true,
+      "localPath": ":feature:user:pkg",
+      "remotePath": "com.mny.mojito:feature_user_pkg:latest.integration"
+    },
+    {
+      "isApply": true,
+      "useLocal": true,
+      "localPath": ":feature:user:export",
+      "remotePath": "com.mny.mojito:feature_user_export:latest.integration"
+    },
+    {
+      "isApply": true,
+      "useLocal": true,
+      "localPath": ":feature:wan:app"
+    },
+    {
+      "isApply": true,
+      "useLocal": true,
+      "localPath": ":feature:wan:pkg",
+      "remotePath": "com.mny.mojito:feature_wan_pkg:latest.integration"
+    },
+    {
+      "isApply": true,
+      "useLocal": true,
+      "localPath": ":feature:wan:export",
+      "remotePath": "com.mny.mojito:feature_wan_export:latest.integration"
+    },
+    {
+      "isApply": true,
+      "useLocal": true,
+      "localPath": ":lib:base",
+      "remotePath": "com.mny.mojito:lib_base:latest.integration"
+    },
+    {
+      "isApply": true,
+      "useLocal": true,
+      "localPath": ":lib:common",
+      "remotePath": "com.mny.mojito:lib_common:latest.integration"
+    },
+    {
+      "isApply": true,
+      "useLocal": true,
+      "localPath": ":lib:lang",
+      "remotePath": "com.mny.mojito:lib_lang:latest.integration"
+    },
+    {
+      "isApply": true,
+      "useLocal": true,
+      "localPath": ":lib:widget",
+      "remotePath": "com.mny.mojito:lib_widget:latest.integration"
+    },
+    {
+      "isApply": true,
+      "useLocal": true,
+      "localPath": ":lib:mojito",
+      "remotePath": "com.mny.mojito:lib_mojito:latest.integration"
+    }
+  ]
+}

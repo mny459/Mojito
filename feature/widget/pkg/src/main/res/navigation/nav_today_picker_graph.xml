@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_motto_picker_graph"
+    app:startDestination="@id/todayPickerFragment">
+
+    <fragment
+        android:id="@+id/todayPickerFragment"
+        android:name="com.mny.mojito.widget.pkg.presentation.today.TodayPickerFragment"
+        android:label="TodayPickerFragment" />
+</navigation>

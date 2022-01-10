@@ -1,0 +1,54 @@
+dependencies {
+    // Android Basic
+    api(Config.depConfig.multidex.dep)
+    api(Config.depConfig.appcompat.dep)
+    api(Config.depConfig.fragment.dep)
+    api(Config.depConfig.fragmentKtx.dep)
+    api(Config.depConfig.coreKtx.dep)
+    api(Config.depConfig.recyclerView.dep)
+    api(Config.depConfig.constraintlayout.dep)
+
+    // Lifecycle
+    api(Config.depConfig.lifecycleRuntime.dep)
+    api(Config.depConfig.lifecycleRuntimeKtx.dep)
+    kapt(Config.depConfig.lifecycleCompiler.dep)
+    api(Config.depConfig.lifecycleProcess.dep)
+    api(Config.depConfig.lifecycleVM.dep)
+    api(Config.depConfig.lifecycleVMKtx.dep)
+    api(Config.depConfig.lifecycleVMKSavedState.dep)
+    api(Config.depConfig.lifecycleLiveData.dep)
+    api(Config.depConfig.lifecycleLiveDataKtx.dep)
+
+    // Kotlin
+    api(Config.depConfig.kotlin.dep)
+    api(Config.depConfig.kotlinReflect.dep)
+    api(Config.depConfig.coroutinesCore.dep)
+    api(Config.depConfig.coroutinesAndroid.dep)
+
+    // network
+    api(Config.depConfig.okHttp4.dep)
+    api(Config.depConfig.retrofit.dep) {
+        exclude module: 'okhttp'
+        exclude module: 'okio'
+    }
+    api(Config.depConfig.gson.dep)
+    implementation(Config.depConfig.gsonConverter.dep) {
+        exclude module: 'gson'
+        exclude module: 'okhttp'
+        exclude module: 'okio'
+        exclude module: 'retrofit'
+    }
+    // DI
+    api(Config.depConfig.hilt.dep)
+    kapt(Config.depConfig.hiltCompiler.dep)
+
+    // Third Party
+    api(Config.depConfig.material.dep)
+    api(Config.depConfig.coil.dep)
+    api(Config.depConfig.utilcode.dep)
+    api(Config.depConfig.free_proguard.dep)
+    api(Config.depConfig.mmkv.dep)
+    api(Config.depConfig.liveEventBus.dep)
+    api(Config.depConfig.anchors.dep)
+    api(Config.depConfig.unpeek_livedata.dep)
+}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FlowDemoActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_live_data_thread_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="LiveData 在不同线程更新数据"
+        android:textColor="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_flow_thread_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Flow 在不同线程更新数据"
+        android:textColor="@color/white" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_live_data_thread_change"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LiveData 线程切换"
+        android:textColor="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_flow_thread_change"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Flow 线程切换"
+        android:textColor="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_flow_back_pressure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Flow 背压"
+        android:textColor="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_live_data_back_pressure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LiveData 背压"
+        android:textColor="@color/white" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_flow_useful_op"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Flow 常用的操作符"
+        android:textColor="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@android:color/black" />
+
+
+</LinearLayout>

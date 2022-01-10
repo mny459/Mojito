@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mny.mojito.widget.pkg">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application>
+        <activity
+            android:name=".presentation.motto.MottoPickerActivity"
+            android:exported="true"
+            android:launchMode="singleInstance" />
+
+        <activity
+            android:name=".presentation.timer.TimerNotePickerActivity"
+            android:exported="true"
+            android:launchMode="singleInstance" />
+
+        <activity
+            android:name=".presentation.today.TodayPickerActivity"
+            android:exported="true"
+            android:launchMode="singleInstance" />
+
+        <activity
+            android:name=".presentation.motto.MottoConfigurePickerActivity"
+            android:exported="true"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".presentation.timer.TimerNoteConfigurePickerActivity"
+            android:exported="true"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MainActivity" />
+
+        <activity
+            android:name="com.mny.mojito.widget.pkg.presentation.today.TodayConfigurePickerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".presentation.motto.MottoWidgetProvider"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.mny.mojito.widget.MOTTO_WIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/motto_widget_info" />
+        </receiver>
+        <receiver
+            android:name="com.mny.mojito.widget.pkg.presentation.today.TodayWidgetProvider"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.mny.mojito.widget.TODAY_WIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/today_widget_info" />
+        </receiver>
+        <!--        <receiver android:name="com.mny.mojito.widget.pkg.presentation.launcher.LauncherWidgetProvider">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />-->
+        <!--                <action android:name="com.mny.mojito.widget.LAUNCHER_WIDGET_UPDATE" />-->
+        <!--                <action android:name="com.mny.mojito.widget.LAUNCHER_START" />-->
+        <!--            </intent-filter>-->
+
+        <!--            <meta-data-->
+        <!--                android:name="android.appwidget.provider"-->
+        <!--                android:resource="@xml/launcher_widget_info" />-->
+        <!--        </receiver>-->
+
+        <!--        <receiver android:name="com.mny.mojito.widget.pkg.presentation.live.LiveWidgetProvider">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />-->
+        <!--                <action android:name="com.mny.mojito.widget.LIVE_WIDGET_UPDATE" />-->
+        <!--            </intent-filter>-->
+
+        <!--            <meta-data-->
+        <!--                android:name="android.appwidget.provider"-->
+        <!--                android:resource="@xml/live_widget_info" />-->
+        <!--        </receiver>-->
+
+        <receiver
+            android:name="com.mny.mojito.widget.pkg.presentation.timer.TimerWidgetProvider"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.mny.mojito.widget.TIMER_WIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/timer_widget_info" />
+        </receiver>
+
+        <service
+            android:name=".presentation.launcher.LauncherViewService"
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <meta-data
+            android:name="com.mny.mojito.widget.pkg.app.WidgetConfig"
+            android:value="ModuleConfig" />
+    </application>
+
+</manifest>

@@ -1,0 +1,4 @@
+dependencies {
+    implementation(Config.depConfig.appcompat.dep)
+    implementation(Config.depConfig.constraintlayout.dep)
+}

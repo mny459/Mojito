@@ -1,0 +1,3 @@
+dependencies {
+    implementation 'com.shuyu:GSYVideoPlayer:7.1.3'
+}

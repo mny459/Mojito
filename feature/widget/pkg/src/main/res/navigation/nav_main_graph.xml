@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.mny.mojito.widget.pkg.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_to_todayFragment"
+            app:destination="@id/todayFragment" />
+        <action
+            android:id="@+id/action_to_mottoFragment"
+            app:destination="@id/mottoFragment" />
+        <action
+            android:id="@+id/action_to_timer_note_fragment"
+            app:destination="@id/timerNoteFragment" />
+        <action
+            android:id="@+id/action_to_launcherPreviewFragment"
+            app:destination="@id/launcherPreviewFragment" />
+    </fragment>
+
+    <!-- Today -->
+
+    <fragment
+        android:id="@+id/todayFragment"
+        android:name="com.mny.mojito.widget.pkg.presentation.today.TodayFragment"
+        android:label="fragment_today"
+        tools:layout="@layout/fragment_today">
+        <action
+            android:id="@+id/action_to_today_add_or_edit"
+            app:destination="@id/todayAddOrEditFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/todayAddOrEditFragment"
+        android:name="com.mny.mojito.widget.pkg.presentation.today.TodayAddOrEditFragment"
+        android:label="TodayAddOrEditFragment"
+        tools:layout="@layout/fragment_today_add_or_edit" />
+
+    <!-- Today -->
+
+    <!-- Motto -->
+
+    <fragment
+        android:id="@+id/mottoFragment"
+        android:name="com.mny.mojito.widget.pkg.presentation.motto.MottoFragment"
+        android:label="fragment_motto"
+        tools:layout="@layout/fragment_motto">
+        <action
+            android:id="@+id/action_to_mottoAddFragment"
+            app:destination="@id/mottoAddFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mottoAddFragment"
+        android:name="com.mny.mojito.widget.pkg.presentation.motto.MottoAddFragment"
+        android:label="fragment_motto_add"
+        tools:layout="@layout/fragment_motto_add" />
+
+    <!-- Motto -->
+
+    <!--  TimerNote  -->
+
+    <fragment
+        android:id="@+id/timerNoteFragment"
+        android:name="com.mny.mojito.widget.pkg.presentation.timer.TimerNoteFragment"
+        android:label="fragment_timer_note"
+        tools:layout="@layout/fragment_timer_note">
+        <action
+            android:id="@+id/action_to_timer_note_add_or_edit"
+            app:destination="@id/timerNoteAddOrEditFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/timerNoteAddOrEditFragment"
+        android:name="com.mny.mojito.widget.pkg.presentation.timer.TimerNoteAddOrEditFragment"
+        android:label="fragment_today_add_or_edit"
+        tools:layout="@layout/fragment_today_add_or_edit" />
+
+    <!--  TimerNote  -->
+
+
+    <fragment
+        android:id="@+id/launcherPreviewFragment"
+        android:name="com.mny.mojito.widget.pkg.presentation.launcher.LauncherPreviewFragment"
+        android:label="fragment_launcher_preview"
+        tools:layout="@layout/fragment_launcher_preview">
+        <action
+            android:id="@+id/action_to_launcherPickerFragment"
+            app:destination="@id/launcherPickerFragment" />
+        <action
+            android:id="@+id/action_to_launcherEditFragment"
+            app:destination="@id/launcherEditFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/launcherPickerFragment"
+        android:name="com.mny.mojito.widget.pkg.presentation.launcher.LauncherPickerFragment"
+        android:label="fragment_launcher_picker"
+        tools:layout="@layout/fragment_launcher_picker" />
+
+    <fragment
+        android:id="@+id/launcherEditFragment"
+        android:name="com.mny.mojito.widget.pkg.presentation.launcher.LauncherEditFragment"
+        android:label="fragment_launcher_edit"
+        tools:layout="@layout/fragment_launcher_edit" />
+
+
+</navigation>

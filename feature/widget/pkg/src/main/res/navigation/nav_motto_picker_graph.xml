@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_motto_picker_graph"
+    app:startDestination="@id/mottoPickerFragment">
+
+    <fragment
+        android:id="@+id/mottoPickerFragment"
+        android:name="com.mny.mojito.widget.pkg.presentation.motto.MottoPickerFragment"
+        android:label="fragment_motto_picker"
+        tools:layout="@layout/fragment_motto_picker" />
+</navigation>

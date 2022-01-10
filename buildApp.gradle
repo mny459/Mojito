@@ -1,0 +1,93 @@
+apply {
+    plugin "com.android.application"
+    from "${rootDir.path}/buildCommon.gradle"
+    from "${rootDir.path}/buildAllDep.gradle"
+    plugin Config.depConfig.plugin_api.pluginId
+    plugin Config.depConfig.plugin_bus.pluginId
+    plugin Config.depConfig.plugin_dokit.pluginId
+    plugin Config.depConfig.plugin_hilt.pluginId
+}
+
+android {
+    defaultConfig {
+        applicationId Config.applicationId + suffix
+        targetSdkVersion Config.targetSdkVersion
+        multiDexEnabled true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += ["room.schemaLocation":
+                                      "$projectDir/schemas".toString()]
+            }
+        }
+
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi-v7a', 'arm64-v8a'//, 'x86',  'x86_64',
+        }
+        buildConfigField "String", "APPID_BUGLY", "\"${Config.buglyId}\""
+    }
+
+    // 签名配置
+    signingConfigs {
+        release {
+            try {
+                storeFile file("${rootDir.path}/keystore/CommonSigning.jks")
+                storePassword "zombie"
+                keyAlias "mny459"
+                keyPassword "zombie"
+            } catch (ex) {
+                throw new InvalidUserDataException(ex.toString())
+            }
+        }
+
+        debug {
+            storeFile file("${rootDir.path}/keystore/debug.keystore")
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            applicationIdSuffix ".debug"
+            resValue "string", "app_name", Config.appName + suffix + ".debug"
+            signingConfig signingConfigs.release
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue "string", "app_name", Config.appName + suffix
+            signingConfig signingConfigs.release
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/*'
+    }
+
+    dexOptions {
+        preDexLibraries true
+        javaMaxHeapSize "8g"
+        maxProcessCount 8
+        dexInProcess = true
+    }
+
+    configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.group == 'androidx.lifecycle') {
+                if (requested.name.startsWith("lifecycle-") && !requested.name.startsWith("lifecycle-extensions")) {
+                    // println("configurations --- ${requested.name} ${requested.version} ${Config.lifecycle_version}")
+                    details.useVersion(Config.lifecycle_version)
+                }
+            }
+        }
+    }
+}
+
+def getSuffix() {
+    if (project.name == "feature_launcher_app") return ""
+    return "." + project.name.substring("feature_".length(), project.name.length() - "_app".length())
+}

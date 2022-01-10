@@ -1,0 +1,51 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: "config.gradle"
+apply from: './checkVersions.gradle'
+
+buildscript {
+    ConfigUtils.init(gradle)
+    repositories {
+        flatDir {
+            //本地仓库,目录下mavenLocal中,编译固定公用类库
+            dirs "${project.rootDir.path}/mavenLocal/aar"
+        }
+        maven {
+            //本地仓库,目录下mavenLocal中,编译固定公用类库
+            url "${project.rootDir.path}/mavenLocal"
+        }
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url "https://www.jitpack.io" }
+    }
+
+    dependencies {
+        for (def entrySet : ConfigUtils.getApplyPlugins().entrySet()) {
+            classpath entrySet.value.dep
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        flatDir {
+            //本地仓库,目录下mavenLocal中,编译固定公用类库
+            dirs "${project.rootDir.path}/mavenLocal/aar"
+        }
+        maven {
+            //本地仓库,目录下mavenLocal中,编译固定公用类库
+            url "${project.rootDir.path}/mavenLocal"
+        }
+        google()
+        jcenter()
+        mavenCentral()
+        mavenLocal()
+        maven { url "https://jitpack.io" }
+        maven { url "https://www.jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

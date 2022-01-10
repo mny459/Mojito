@@ -1,0 +1,7 @@
+<resources>
+    <string name="widget_motto_example">吃得苦中苦，方知苦中苦吃得苦中苦，方知苦中苦吃得苦中苦，方知苦中苦吃得苦中苦，方知苦中苦吃得苦中苦，方知苦中苦吃得苦中苦，方知苦中苦吃得苦中苦，方知苦中苦吃得苦中苦，方知苦中苦吃得苦中苦，方知苦中苦</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="widget_motto">Motto</string>
+    <string name="widget_today">Today</string>
+    <string name="widget_timer_note">TimerNote</string>
+</resources>

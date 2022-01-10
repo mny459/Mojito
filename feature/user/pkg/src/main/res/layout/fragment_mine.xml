@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorSurface"
+        app:srlAccentColor="?attr/colorOnPrimary"
+        app:srlEnableLoadMore="false"
+        app:srlEnableOverScrollBounce="true"
+        app:srlEnableRefresh="true"
+        app:srlPrimaryColor="?attr/colorAccent"
+        tools:context="com.mny.wan.user.pkg.presentation.mine.MineFragment">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                style="@style/Widget.Wan.AppBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/dp_2"
+                android:fitsSystemWindows="true"
+                android:outlineProvider="bounds">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="32dp">
+
+                    <androidx.constraintlayout.widget.Group
+                        android:id="@+id/group_user_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:constraint_referenced_ids="iv_logout,tv_credits"
+                        tools:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/iv_logout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp_16"
+                        android:src="@drawable/ic_logout"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="?attr/colorOnPrimary" />
+
+                    <ImageView
+                        android:id="@+id/iv_avatar"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="60dp"
+                        android:src="@drawable/ic_android"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="?attr/colorOnPrimary" />
+
+                    <TextView
+                        android:id="@+id/tv_login_or_nickname"
+                        style="@style/CommonTextView.Large"
+                        android:layout_marginTop="@dimen/dp_16"
+                        android:textColor="?attr/colorOnPrimary"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/iv_avatar"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/tv_credits"
+                        style="@style/CommonTextView"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:textColor="?attr/colorOnPrimary"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_login_or_nickname"
+                        tools:text="积分：" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorSurface"
+                android:orientation="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <com.mojito.common.view.CommonRowView
+                    android:id="@+id/row_coin_count"
+                    style="@style/Widget.CommonRow"
+                    app:title="@string/mine_coin_count" />
+
+                <com.mojito.common.view.CommonRowView
+                    android:id="@+id/row_collect"
+                    style="@style/Widget.CommonRow"
+                    app:title="@string/collection" />
+
+                <com.mojito.common.view.CommonRowView
+                    android:id="@+id/row_project"
+                    style="@style/Widget.CommonRow"
+                    app:title="@string/project" />
+
+                <com.mojito.common.view.CommonRowView
+                    android:id="@+id/row_we_chat_article"
+                    style="@style/Widget.CommonRow"
+                    app:title="@string/we_chat_article" />
+
+                <com.mojito.common.view.CommonRowView
+                    android:id="@+id/row_square"
+                    style="@style/Widget.CommonRow"
+                    app:title="@string/square" />
+
+                <com.mojito.common.view.CommonRowView
+                    android:id="@+id/row_settings"
+                    style="@style/Widget.CommonRow"
+                    app:title="@string/settings" />
+
+            </LinearLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+</FrameLayout>

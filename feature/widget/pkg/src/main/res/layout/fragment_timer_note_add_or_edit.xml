@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/widget_color_surface"
+    tools:context=".presentation.timer.TimerNoteAddOrEditFragment">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_switch_mode"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_switch_timer_note_mode"
+        android:tint="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/cell_preview"
+        layout="@layout/cell_timer_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_16"
+        app:layout_constraintTop_toBottomOf="@id/iv_switch_mode" />
+
+    <com.mny.mojito.widget.pkg.view.RowInfoView
+        android:id="@+id/riv_name"
+        style="@style/Widget.CommonRowInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cell_preview" />
+
+    <com.mny.mojito.widget.pkg.view.RowInfoView
+        android:id="@+id/riv_start_time"
+        style="@style/Widget.CommonRowInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/riv_name" />
+
+    <com.mny.mojito.widget.pkg.view.RowInfoView
+        android:id="@+id/riv_target_time"
+        style="@style/Widget.CommonRowInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/riv_start_time" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_delete"
+        style="@style/Widget.CommonBtn.Warn"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:text="删除"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_save"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_save"
+        style="@style/Widget.CommonBtn"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:text="保存"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_delete" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

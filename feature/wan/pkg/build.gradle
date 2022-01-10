@@ -1,0 +1,6 @@
+dependencies {
+    implementation(Config.depConfig.appcompat.dep)
+    implementation(Config.depConfig.x5WebView.dep)
+    implementation(Config.depConfig.preference.dep)
+    implementation(Config.depConfig.lottie.dep)
+}

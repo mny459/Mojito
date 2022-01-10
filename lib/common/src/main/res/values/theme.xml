@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Theme 和 Theme Overlay -->
+    <!-- Theme Overlay 的作用主要表示可以覆盖 parent = ""-->
+    <!-- https://juejin.cn/post/6844904200673968141#heading-6 在 Context 中使用  Theme 和 Theme Overlay -->
+    <!-- 通过 ?attr/ 的方式来引用主题属性 ? 代表在当前主题中搜索 -->
+    <!-- colorPrimarySurface 在暗色和亮色主题下会自动区分 -->
+    <style name="BaseAppTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <!-- 主题颜色 分割线 -->
+        <!-- App的主要颜色 -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!-- 主色上显示内容的颜色-->
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <!-- 二级主色调 -->
+        <item name="colorSecondary">?attr/colorPrimary</item>
+        <!-- App的次要颜色 -->
+        <item name="colorPrimaryDark">?attr/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- 部件的表面颜色，如卡片、表格、菜单等 -->
+        <item name="colorSurface">@color/colorSurface</item>
+        <!-- 部件显示的内容的颜色-->
+        <item name="colorOnSurface">@color/colorOnSurface</item>
+        <!-- 错误显示的颜色-->
+        <item name="colorError">@color/colorError</item>
+        <!-- 文字的主色 -->
+        <item name="android:textColorPrimary">@color/color_0C101B</item>
+        <item name="app_text_primary_color">@color/appTextPrimaryColor</item>
+        <item name="app_text_secondary_color">@color/appTextSecondColor</item>
+        <item name="app_divider_color">@color/colorDivider</item>
+        <!-- 文字的二级颜色 -->
+        <item name="android:textColorSecondary">@color/color_B6B7BA</item>
+
+        <!-- 正常状态下图标/控件的颜色 -->
+        <item name="colorControlNormal">?attr/colorOnPrimary</item>
+        <!-- 激活状态下图标/控件的颜色（例如 checked） -->
+        <item name="colorControlActivated">?attr/colorPrimary</item>
+
+        <!-- 应用窗口（Activity、Dialog等）背景色-->
+        <item name="android:windowBackground">@color/colorWindowBackground</item>
+        <!-- 主题颜色分割线 -->
+
+        <!-- 主题大小 分割线 -->
+        <!-- ActionBar、Toolbar的高度 -->
+        <item name="actionBarSize">@dimen/dp_48</item>
+        <!-- 列表项的标准高度 (最小值) -->
+        <item name="listPreferredItemHeight">@dimen/dp_58</item>
+
+        <!-- 主题大小 分割线 -->
+        <!-- 主题动画分割线 -->
+        <!-- 想使用5.0的Activity过渡动画，就要加上这个，或者在代码里面设置 -->
+        <item name="android:windowContentTransitions">true</item>
+        <!--下面的内容要在5.0上才好用,启用转换过程都会更加流畅自然,指定进入和退出的动画可以重叠 -->
+        <item name="android:windowAllowEnterTransitionOverlap">false</item>
+        <item name="android:windowAllowReturnTransitionOverlap">false</item>
+
+
+        <!-- 左上角返回Icon -->
+        <item name="homeAsUpIndicator">@drawable/ic_back</item>
+
+        <!-- 自定义 SearchView 的样式 -->
+        <item name="searchViewStyle">@style/Widget.Wan.SearchView</item>
+        <item name="toolbarStyle">@style/Widget.Wan.Toolbar</item>
+        <item name="tabStyle">@style/Widget.Wan.TabLayout</item>
+        <item name="appBarLayoutStyle">@style/Widget.Wan.AppBarLayout</item>
+        <item name="bottomNavigationStyle">@style/Widget.Wan.BottomNavigationView</item>
+        <item name="floatingActionButtonStyle">@style/Widget.Wan.FloatingActionButton</item>
+    </style>
+
+    <style name="BaseAppTheme.SplashTheme">
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme" parent="BaseAppTheme">
+        <!-- 去除默认阴影 -->
+        <item name="android:elevation">0dp</item>
+        <item name="android:outlineProvider">none</item>
+
+        <item name="GroupListTipPointStyle">@style/GroupListView.TipPoint</item>
+        <item name="GroupListTipNewStyle">@style/GroupListView.TipNew</item>
+
+        <item name="group_list_item_icon_margin_right">12dp</item>
+        <item name="group_list_item_accessory_margin_left">14dp</item>
+        <item name="group_list_item_title_v_text_size">15sp</item>
+        <item name="group_list_item_title_h_text_size">16sp</item>
+        <item name="group_list_item_title_line_space">5dp</item>
+        <item name="group_list_item_detail_v_text_size">13sp</item>
+        <item name="group_list_item_detail_h_text_size">14sp</item>
+        <item name="group_list_item_detail_line_space">5dp</item>
+        <item name="group_list_item_detail_h_margin_with_title">20dp</item>
+        <item name="group_list_item_detail_v_margin_with_title">4dp</item>
+        <item name="group_list_item_holder_margin_with_title">8dp</item>
+
+        <item name="qmui_skin_support_common_list_title_color">?attr/app_text_primary_color</item>
+        <item name="qmui_skin_support_common_list_detail_color">?attr/app_text_secondary_color</item>
+        <item name="qmui_skin_support_common_list_icon_tint_color">?attr/colorAccent</item>
+        <item name="qmui_skin_support_common_list_red_point_tint_color">?attr/colorError</item>
+        <item name="qmui_skin_support_common_list_new_drawable">@drawable/group_icon_tip_new</item>
+        <item name="qmui_skin_support_common_list_separator_color">?attr/app_divider_color</item>
+        <item name="qmui_skin_support_s_common_list_bg">?attr/colorSurface</item>
+        <item name="qmui_skin_support_common_list_chevron_color">?attr/app_divider_color</item>
+    </style>
+
+    <style name="AppTheme.TransStatusBar.Base" parent="AppTheme">
+        <!--去除顶部的状态栏-->
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowFrame">@null</item>
+    </style>
+
+    <style name="AppTheme.TransStatusBar" parent="AppTheme.TransStatusBar.Base">
+        <item name="android:statusBarColor">@null</item>
+    </style>
+
+    <style name="AppTheme.Launcher" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/launcher_bg</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowContentTransitions">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="AppThemeMain" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+</resources>

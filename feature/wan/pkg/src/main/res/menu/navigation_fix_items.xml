@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="@string/wan_nav_home"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/QAFragment"
+        android:icon="@drawable/ic_qa"
+        android:title="@string/wan_nav_qa"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/systemFragment"
+        android:icon="@drawable/ic_system"
+        android:title="@string/wan_nav_system"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/mineFragment"
+        android:icon="@drawable/ic_mine"
+        android:title="@string/wan_nav_mine"
+        app:showAsAction="ifRoom" />
+</menu>

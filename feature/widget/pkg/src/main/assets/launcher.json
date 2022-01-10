@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "data": [
+    {
+      "name": "QQ",
+      "schema": "mqq://"
+    },
+    {
+      "name": "微信",
+      "schema": "weixin://"
+    },
+    {
+      "name": "微信扫一扫",
+      "schema": "weixin://dl/scan"
+    },
+    {
+      "name": "微信朋友圈",
+      "schema": "weixin://dl/moments"
+    },
+    {
+      "name": "支付宝",
+      "schema": "alipay://"
+    },
+    {
+      "name": "支付宝扫码",
+      "schema": "alipays://platformapi/startapp?saId=10000007"
+    },
+    {
+      "name": "美团外卖",
+      "schema": "meituanwaimai://"
+    }
+  ]
+}

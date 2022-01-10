@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CommonListItemView">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <!--        <item name="android:background">?attr/qmui_skin_support_s_list_item_bg_2</item>-->
+        <!--        <item name="qmui_common_list_title_color">?attr/qmui_skin_support_common_list_title_color-->
+        <!--        </item>-->
+        <!--        <item name="qmui_common_list_detail_color">-->
+        <!--            ?attr/qmui_skin_support_common_list_detail_color-->
+        <!--        </item>-->
+    </style>
+
+    <style name="GroupListView" parent="" />
+
+    <!-- 提示更新小圆点 -->
+    <style name="GroupListView.TipPoint">
+        <item name="android:layout_width">@dimen/group_tips_point_size</item>
+        <item name="android:layout_height">@dimen/group_tips_point_size</item>
+        <item name="android:background">@drawable/group_tips_point</item>
+    </style>
+
+    <!-- 提示更新new -->
+    <style name="GroupListView.TipNew">
+        <item name="android:layout_width">37dp</item>
+        <item name="android:layout_height">17dp</item>
+        <item name="android:src">@drawable/group_icon_tip_new</item>
+    </style>
+</resources>

@@ -1,0 +1,17 @@
+dependencies {
+    // LeakCanary
+    debugImplementation Config.depConfig.leakcanary_android.dep
+
+    // 根据 Config.pkgConfig 来依赖所有 pkg
+    for (def entrySet : ConfigUtils.getApplyPkgs().entrySet()) {
+        // println("app dependencies ${entrySet.value.dep}")
+        implementation(entrySet.value.dep)
+    }
+
+    if (Config.depConfig.feature_mock.isApply) {
+        implementation(Config.depConfig.feature_mock.dep)
+    }
+
+    implementation(Config.depConfig.hilt.dep)
+    kapt(Config.depConfig.hiltCompiler.dep)
+}

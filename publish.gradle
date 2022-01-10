@@ -1,0 +1,35 @@
+task publishLocalMaven {
+    group = 'aar'
+    description = 'publish aar to local maven'
+    dependsOn project.path + ':clean'
+    finalizedBy 'uploadArchives'
+
+    doLast {
+        def projectName = project.rootProject.name.toLowerCase()
+        def aarName = project.name.toLowerCase()
+        def mavenPath = "${project.rootDir.path}/mavenLocal"
+        def publishPath = "${mavenPath}/com/mny/${projectName}/${aarName}"
+        delete publishPath
+        apply plugin: 'maven'
+        //设置编译包组件名
+        project.group = 'com.mny.' + projectName
+        //设置版本号 直接使用当前日期
+        project.version = new Date().format("yyyyMMddHHmmss", TimeZone.getTimeZone("GMT+8"))
+
+        uploadArchives {
+            repositories {
+                mavenDeployer {
+                    repository(url: uri(mavenPath))
+                }
+            }
+        }
+
+        uploadArchives.doFirst {
+            println "${projectName} start publish aar: ${aarName} version: ${project.version} to maven ${mavenPath}"
+        }
+
+        uploadArchives.doLast {
+            println "${projectName} end publish aar: ${aarName} version: ${project.version} to maven ${publishPath}"
+        }
+    }
+}

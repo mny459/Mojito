@@ -1,0 +1,19 @@
+android {
+    defaultConfig {
+        buildConfigField "String", "APPID_BUGLY", "\"${Config.buglyId}\""
+    }
+}
+
+dependencies {
+    api(Config.depConfig.lib_base.dep)
+    api(Config.depConfig.lib_lang.dep)
+    api(Config.depConfig.lib_widget.dep)
+
+    debugImplementation(Config.depConfig.dokit.dep)
+    releaseImplementation(Config.depConfig.dokitNoOp.dep)
+    implementation(Config.depConfig.bugly.dep)
+    implementation(Config.depConfig.buglyNative.dep)
+    implementation(Config.depConfig.x5WebView.dep)
+
+    kapt(Config.depConfig.hiltCompiler.dep)
+}

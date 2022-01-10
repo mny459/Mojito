@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_friday_widget"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        tools:text="2021年08月07日" />
+
+    <TextView
+        android:id="@+id/tv_friday_q"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_date"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        tools:text="今天是周五吗" />
+
+    <TextView
+        android:id="@+id/tv_friday_a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        tools:text="不是，还有6天" />
+
+</RelativeLayout>

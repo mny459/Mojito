@@ -1,0 +1,27 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mny.wan.user.pkg">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application>
+
+        <activity
+            android:name=".presentation.login.LoginActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".presentation.mine.MineActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".presentation.about.AboutActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".presentation.setting.SettingsActivity"
+            android:launchMode="singleTop" />
+        <activity android:name=".presentation.coin.CoinDetailActivity" />
+    </application>
+
+
+</manifest>

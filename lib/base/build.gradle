@@ -1,0 +1,33 @@
+apply {
+    plugin "com.android.library"
+    plugin "kotlin-android"
+    plugin "kotlin-kapt"
+    plugin "dagger.hilt.android.plugin"
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api(Config.depConfig.lib_mojito.dep)
+
+    api(Config.depConfig.swipe_panel.dep)
+    api(Config.depConfig.hilt.dep)
+    kapt(Config.depConfig.hiltCompiler.dep)
+
+    api(Config.depConfig.navigation_runtime.dep)
+    api(Config.depConfig.navigation_fragment.dep)
+    api(Config.depConfig.navigation_fragmentKtx.dep)
+    api(Config.depConfig.navigation_ui.dep)
+    api(Config.depConfig.navigation_uiKtx.dep)
+
+    api(Config.depConfig.xPopup.dep)
+    api(Config.depConfig.refresh_core.dep)
+    api(Config.depConfig.refresh_headerClassics.dep)
+    api(Config.depConfig.refresh_footerClassics.dep)
+
+    api(Config.depConfig.banner.dep)
+    api(Config.depConfig.brvah.dep)
+    api(Config.depConfig.flexbox.dep)
+    api(Config.depConfig.immersionBarCore.dep)
+    api(Config.depConfig.immersionBarComponents.dep)
+    api(Config.depConfig.immersionBarKtx.dep)
+    api(Config.depConfig.rvDivider.dep)
+}
