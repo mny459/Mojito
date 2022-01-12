@@ -21,7 +21,7 @@ jobs:
     - name: Grant execute permission for gradlew # Shell Command
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./gradlew clean && ./gradlew :feature_launcher_app:assembleRelease
+      run: ./gradlew clean && ./gradlew :feature_launcher_app:assembleDebug
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.3.1
       with:
